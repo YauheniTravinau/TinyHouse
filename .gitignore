@@ -7,3 +7,4 @@ server.js
 
 # Игнорировать папку с зависимостями node_modules
 node_modules/
+.idea/
