@@ -1,0 +1,73 @@
+/* Общие стили для контейнера и списка городов */
+.container {
+    display: flex;
+    border: 1px solid #b8860b;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgb(184, 134, 11);
+    max-width: 1300px; /* измените на нужную вам ширину */
+    max-height: 800px; /* измените на нужную вам высоту */
+    margin: 0 auto;
+}
+
+.city-list {
+    background: #fff8dc;
+    padding: 10px;
+    width: 200px;
+    border-right: 1px solid #b8860b;
+    overflow-y: auto; /* Изменено */
+}
+
+.city-list ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0; /* Добавлено */
+}
+
+.city-list li {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #b8860b;
+}
+
+.city-list li:hover {
+    background: #ffd700;
+}
+
+.city-info {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: calc(100% - 200px); /* Изменено */
+    overflow-y: auto; /* Изменено */
+}
+
+.city-details {
+    display: none;
+    width: 100%;
+}
+
+.city-details .column {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Добавлено */
+    justify-content: center; /* Добавлено */
+    width: 30%;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.city-details h2 {
+    margin-top: 0;
+}
+
+/* Для мобильных устройств */
+@media (max-width: 768px) {
+    .city-list {
+        display: none;
+    }
+
+    .city-info {
+        width: 100%;
+    }
+}

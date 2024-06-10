@@ -1,0 +1,23 @@
+.footer {
+    border: 1px solid #DAA520;
+    text-align: center;
+    background-color: #FFF8DC; /* Добавляем цвет фона */
+}
+
+.footer a {
+    margin: 0 -25px; /* Уменьшаем расстояние между иконками */
+    color: #B8860B;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.footer a:hover {
+    transform: translateY(-4px) rotate(3deg) scale(1.1);
+}
+
+/* Медиа-запрос для устройств с шириной экрана до 768px */
+@media only screen and (max-width: 768px) {
+    .footer a {
+        margin: 0; /* Сбрасываем отступы */
+    }
+}

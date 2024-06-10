@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой интернет-магазин</title>
+    <link rel="stylesheet" href="/global.css">
+    <link rel="stylesheet" href="bewertungen.css">
+    <link rel="stylesheet" href="/popular-products/popular-products.css">
+    <link rel="stylesheet" href="/header/header.css">
+    <link rel="stylesheet" href="/menu/menu.css">
+    <link rel="stylesheet" href="/footer/footer.css">
+</head>
+<body>
+<div id="header-placeholder"></div>
+<nav id="menu"></nav>
+<div id="contact-puls-icon"></div>
+<br><br>
+<h1>Träume wurden wahr?</h1>
+<br>
+<button id="leaveReviewButton" class="bewertungen">&#9733 <strong>Bewertung hinterlassen</strong> &#9733</button>
+<br>
+<div id="reviewModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id="reviewStep1">
+            <h2>Sind Sie mit unserem Produkt zufrieden?</h2>
+            <button id="yesButton" class="yes-button">Ja</button>
+            <button id="noButton" class="no-button">Nein</button>
+        </div>
+        <div id="reviewStep2Yes" class="review-step">
+            <h2>Bewerten Sie von 1 bis 5 Sterne.</h2>
+            <div class="star-rating">
+                <input type="radio" id="star5" name="rating" value="5"><label for="star5" title="5 звезд">&#9733;</label>
+                <input type="radio" id="star4" name="rating" value="4"><label for="star4" title="4 звезды">&#9733;</label>
+                <input type="radio" id="star3" name="rating" value="3"><label for="star3" title="3 звезды">&#9733;</label>
+                <input type="radio" id="star2" name="rating" value="2"><label for="star2" title="2 звезды">&#9733;</label>
+                <input type="radio" id="star1" name="rating" value="1"><label for="star1" title="1 звезда">&#9733;</label>
+            </div>
+            <label for="nameYesInput">Geben Sie Ihren Namen ein:</label>
+            <input type="text" id="nameYesInput" name="name" required>
+            <label for="review">Schreiben Sie eine Bewertung:</label>
+            <textarea id="review" name="review" maxlength="500" required></textarea>
+            <label for="photos">Fügen Sie bis zu 9 Fotos hinzu:</label>
+            <input type="file" id="photos" name="photos" multiple accept="image/*">
+            <button id="submitYesReview">Senden</button>
+        </div>
+        <div id="reviewStep2No" class="review-step">
+            <h2>Beschreiben Sie Ihre Situation</h2>
+            <label for="nameNoInput">Name:</label>
+            <input type="text" id="nameNoInput" name="name" required>
+            <label for="email">E-Mail:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="phone">Telefon:</label>
+            <input type="tel" id="phone" name="phone" required>
+            <label for="issue">Beschreiben Sie Ihre Situation:</label>
+            <textarea id="issue" name="issue" rows="4" required></textarea>
+            <p class="confidential-info">Diese Informationen sind vertraulich und dürfen weder verbreitet noch veröffentlicht werden. Wir tun unser Bestes, um Sie zu beeindrucken und Ihre Meinung über uns zu ändern.</p>
+            <button id="submitNoReview" class="no-button">Senden</button>
+        </div>
+    </div>
+</div>
+<div class="conteiner-card">
+    <!-- Модальное окно для полного отзыва -->
+    <div id="fullReviewModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="full-review">
+                <h2 class="review-author"></h2>
+                <div class="review-rating"></div>
+                <div class="review-date"></div>
+                <div class="review-text">
+                    <p class="full"></p>
+                </div>
+                <div class="review-photos">
+                    <!-- <img src="" alt=""> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="scrollToTopContainer" class="hidden">
+        <button onclick="scrollToTop()" id="scrollToTopBtn" title="Go to top">↑</button>
+    </div>
+    <div class="review-card">
+        <div class="review-card-inner">
+            <div class="review-card-front">
+                <h3 class="review-author">Paul</h3>
+                <div class="review-rating">
+                    &#9733;&#9733;&#9733;&#9733;&#9734; <!-- 4 звезды -->
+                </div>
+                <div class="review-date">Опубликовано: 23 мая 2024</div>
+            </div>
+            <div class="review-card-back">
+                <p class="review-text">Vielen Dank für mein neues Zuhause auf Rädern! Ich habe schon lange von Reisen und der Freiheit der Bewegung geträumt, aber immer hat mich etwas zurückgehalten. Ihr Angebot hat mein Leben verändert. Ihr Team von Profis hat mir geholfen, das perfekte Zuhause auszuwählen, das allen meinen Bedürfnissen entspricht. Als ich zum ersten Mal hineinging, fühlte ich, dass es mein Ort ist, mein gemütlicher Raum, wo ich mich wie zu Hause fühlen kann, egal wo ich bin.</p>
+                <div class="review-photos">
+                    <img src="/images/HolzhausHarmonie.jpg" alt="Фото 1">
+                    <img src="/images/HolzhausHarmonie.jpg" alt="Фото 2">
+                    <img src="/images/HolzhausHarmonie.jpg" alt="Фото 3">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="review-card">
+        <div class="review-card-inner">
+            <div class="review-card-front">
+                <h3 class="review-author">Leon</h3>
+                <div class="review-rating">
+                    &#9733;&#9733;&#9733;&#9733;&#9733; <!-- 4 звезды -->
+                </div>
+                <div class="review-date">Опубликовано: 28 июня 2024</div>
+            </div>
+            <div class="review-card-back">
+                <p class="review-text">Jedes Detail in diesem Haus ist mit Liebe durchdacht. Die Renovierung wurde professionell durchgeführt, und die Annehmlichkeiten, die enthalten sind, machen meine Reise komfortabel und angenehm. Ich habe bereits mein erstes Abenteuer auf Rädern begonnen, und es war eine unvergessliche Erfahrung. Jetzt kann ich die Welt erkunden, ohne mich durch Entfernungen und Zeit zu begrenzen.</p>
+                <div class="review-photos">
+                    <img src="photo1.jpg" alt="Фото 1">
+                    <img src="photo2.jpg" alt="Фото 2">
+                    <img src="photo3.jpg" alt="Фото 3">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="review-card">
+        <div class="review-card-inner">
+            <div class="review-card-front">
+                <h3 class="review-author">Emma</h3>
+                <div class="review-rating">
+                    &#9733;&#9733;&#9733;&#9733;&#9733; <!-- 4 звезды -->
+                </div>
+                <div class="review-date">Опубликовано: 23 мая 2024</div>
+            </div>
+            <div class="review-card-back">
+                <p class="review-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at sem non libero scelerisque tincidunt. Mauris euismod vehicula velit, nec suscipit sem gravida non. Ut pellentesque bibendum ipsum vel scelerisque. Integer sit amet justo ac orci fringilla rhoncus id ut felis. Phasellus eu ligula turpis. Sed volutpat convallis tortor eget rutrum. Nam tempor diam nec odio mollis mattis. Nam sed fermentum nisl. Nulla facilisi. Curabitur at hendrerit velit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nullam quis elit sapien. Curabitur vitae sollicitudin enim, a pellentesque ipsum. Ut malesuada leo vel nulla hendrerit tincidunt. Nulla facilisi. Sed ut nulla sit amet odio rutrum posuere in vitae lacus. Duis vel metus vitae felis pharetra dictum.</p>
+                <div class="review-photos">
+                    <img src="photo1.jpg" alt="Фото 1">
+                    <img src="photo2.jpg" alt="Фото 2">
+                    <img src="photo3.jpg" alt="Фото 3">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="review-card">
+        <div class="review-card-inner">
+            <div class="review-card-front">
+                <h3 class="review-author">Alexander</h3>
+                <div class="review-rating">
+                    &#9733;&#9733;&#9733;&#9733;&#9734; <!-- 4 звезды -->
+                </div>
+                <div class="review-date">Опубликовано: 03 февраля 2024</div>
+            </div>
+            <div class="review-card-back">
+                <p class="review-text">Dank Ihnen habe ich die Freiheit erlangt, nach der ich so lange gesucht habe. Ihr Unternehmen bietet nicht nur qualitativ hochwertige Produkte, sondern schafft auch Möglichkeiten für neue Abenteuer und Erlebnisse. Ich freue mich auf zukünftige Reisen und neue Entdeckungen in meinem gemütlichen Haus auf Rädern. Nochmals vielen Dank für Ihre Aufmerksamkeit, Fürsorge und Professionalität!</p>
+                <div class="review-photos">
+                    <img src="photo1.jpg" alt="Фото 1">
+                    <img src="photo2.jpg" alt="Фото 2">
+                    <img src="photo3.jpg" alt="Фото 3">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="review-card">
+        <div class="review-card-inner">
+            <div class="review-card-front">
+                <h3 class="review-author">Mia</h3>
+                <div class="review-rating">
+                    &#9733;&#9733;&#9733;&#9733;&#9734; <!-- 4 звезды -->
+                </div>
+                <div class="review-date">Опубликовано: 23 мая 2024</div>
+            </div>
+            <div class="review-card-back">
+                <p class="review-text">Очень понравился сервис!</p>
+                <div class="review-photos">
+                    <img src="photo1.jpg" alt="Фото 1">
+                    <img src="photo2.jpg" alt="Фото 2">
+                    <img src="photo3.jpg" alt="Фото 3">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="review-card">
+        <div class="review-card-inner">
+            <div class="review-card-front">
+                <h3 class="review-author">Hannah</h3>
+                <div class="review-rating">
+                    &#9733;&#9733;&#9733;&#9733;&#9734; <!-- 4 звезды -->
+                </div>
+                <div class="review-date">Опубликовано: 23 мая 2024</div>
+            </div>
+            <div class="review-card-back">
+                <p class="review-text">Очень понравился сервис!</p>
+                <div class="review-photos">
+                    <img src="photo1.jpg" alt="Фото 1">
+                    <img src="photo2.jpg" alt="Фото 2">
+                    <img src="photo3.jpg" alt="Фото 3">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="review-card">
+        <div class="review-card-inner">
+            <div class="review-card-front">
+                <h3 class="review-author">Emilia</h3>
+                <div class="review-rating">
+                    &#9733;&#9733;&#9733;&#9733;&#9734; <!-- 4 звезды -->
+                </div>
+                <div class="review-date">Опубликовано: 23 мая 2024</div>
+            </div>
+            <div class="review-card-back">
+                <p class="review-text">Очень понравился сервис!</p>
+                <div class="review-photos">
+                    <img src="photo1.jpg" alt="Фото 1">
+                    <img src="photo2.jpg" alt="Фото 2">
+                    <img src="photo3.jpg" alt="Фото 3">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="review-card">
+        <div class="review-card-inner">
+            <div class="review-card-front">
+                <h3 class="review-author">Maximilian</h3>
+                <div class="review-rating">
+                    &#9733;&#9733;&#9733;&#9733;&#9734; <!-- 4 звезды -->
+                </div>
+                <div class="review-date">Опубликовано: 23 мая 2024</div>
+            </div>
+            <div class="review-card-back">
+                <p class="review-text">Очень понравился сервис!</p>
+                <div class="review-photos">
+                    <img src="photo1.jpg" alt="Фото 1">
+                    <img src="photo2.jpg" alt="Фото 2">
+                    <img src="photo3.jpg" alt="Фото 3">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="review-card">
+        <div class="review-card-inner">
+            <div class="review-card-front">
+                <h3 class="review-author">Felix</h3>
+                <div class="review-rating">
+                    &#9733;&#9733;&#9733;&#9733;&#9734; <!-- 4 звезды -->
+                </div>
+                <div class="review-date">Опубликовано: 23 мая 2024</div>
+            </div>
+            <div class="review-card-back">
+                <p class="review-text">Очень понравился сервис!</p>
+                <div class="review-photos">
+                    <img src="photo1.jpg" alt="Фото 1">
+                    <img src="photo2.jpg" alt="Фото 2">
+                    <img src="photo3.jpg" alt="Фото 3">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="review-card">
+        <div class="review-card-inner">
+            <div class="review-card-front">
+                <h3 class="review-author">Jonas</h3>
+                <div class="review-rating">
+                    &#9733;&#9733;&#9733;&#9733;&#9734; <!-- 4 звезды -->
+                </div>
+                <div class="review-date">Опубликовано: 23 мая 2024</div>
+            </div>
+            <div class="review-card-back">
+                <p class="review-text">Очень понравился сервис!</p>
+                <div class="review-photos">
+                    <img src="photo1.jpg" alt="Фото 1">
+                    <img src="photo2.jpg" alt="Фото 2">
+                    <img src="photo3.jpg" alt="Фото 3">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="review-card">
+        <div class="review-card-inner">
+            <div class="review-card-front">
+                <h3 class="review-author">Lena</h3>
+                <div class="review-rating">
+                    &#9733;&#9733;&#9733;&#9733;&#9734; <!-- 4 звезды -->
+                </div>
+                <div class="review-date">Опубликовано: 23 мая 2024</div>
+            </div>
+            <div class="review-card-back">
+                <p class="review-text">Очень понравился сервис!</p>
+                <div class="review-photos">
+                    <img src="photo1.jpg" alt="Фото 1">
+                    <img src="photo2.jpg" alt="Фото 2">
+                    <img src="photo3.jpg" alt="Фото 3">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="review-card">
+        <div class="review-card-inner">
+            <div class="review-card-front">
+                <h3 class="review-author">Elias</h3>
+                <div class="review-rating">
+                    &#9733;&#9733;&#9733;&#9733;&#9734; <!-- 4 звезды -->
+                </div>
+                <div class="review-date">Опубликовано: 23 мая 2024</div>
+            </div>
+            <div class="review-card-back">
+                <p class="review-text">Очень понравился сервис!</p>
+                <div class="review-photos">
+                    <img src="photo1.jpg" alt="Фото 1">
+                    <img src="photo2.jpg" alt="Фото 2">
+                    <img src="photo3.jpg" alt="Фото 3">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="review-card">
+        <div class="review-card-inner">
+            <div class="review-card-front">
+                <h3 class="review-author">Marie</h3>
+                <div class="review-rating">
+                    &#9733;&#9733;&#9733;&#9733;&#9734; <!-- 4 звезды -->
+                </div>
+                <div class="review-date">Опубликовано: 23 мая 2024</div>
+            </div>
+            <div class="review-card-back">
+                <p class="review-text">Очень понравился сервис!</p>
+                <div class="review-photos">
+                    <img src="photo1.jpg" alt="Фото 1">
+                    <img src="photo2.jpg" alt="Фото 2">
+                    <img src="photo3.jpg" alt="Фото 3">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="review-card">
+        <div class="review-card-inner">
+            <div class="review-card-front">
+                <h3 class="review-author">Lukas</h3>
+                <div class="review-rating">
+                    &#9733;&#9733;&#9733;&#9733;&#9734; <!-- 4 звезды -->
+                </div>
+                <div class="review-date">Опубликовано: 23 мая 2024</div>
+            </div>
+            <div class="review-card-back">
+                <p class="review-text">Очень понравился сервис!</p>
+                <div class="review-photos">
+                    <img src="photo1.jpg" alt="Фото 1">
+                    <img src="photo2.jpg" alt="Фото 2">
+                    <img src="photo3.jpg" alt="Фото 3">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="review-card">
+        <div class="review-card-inner">
+            <div class="review-card-front">
+                <h3 class="review-author">Clara</h3>
+                <div class="review-rating">
+                    &#9733;&#9733;&#9733;&#9733;&#9734; <!-- 4 звезды -->
+                </div>
+                <div class="review-date">Опубликовано: 23 мая 2024</div>
+            </div>
+            <div class="review-card-back">
+                <p class="review-text">Очень понравился сервис!</p>
+                <div class="review-photos">
+                    <img src="photo1.jpg" alt="Фото 1">
+                    <img src="photo2.jpg" alt="Фото 2">
+                    <img src="photo3.jpg" alt="Фото 3">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="review-card">
+        <div class="review-card-inner">
+            <div class="review-card-front">
+                <h3 class="review-author">Anna</h3>
+                <div class="review-rating">
+                    &#9733;&#9733;&#9733;&#9733;&#9734; <!-- 4 звезды -->
+                </div>
+                <div class="review-date">Опубликовано: 23 мая 2024</div>
+            </div>
+            <div class="review-card-back">
+                <p class="review-text">Очень понравился сервис!</p>
+                <div class="review-photos">
+                    <img src="photo1.jpg" alt="Фото 1">
+                    <img src="photo2.jpg" alt="Фото 2">
+                    <img src="photo3.jpg" alt="Фото 3">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="review-card">
+        <div class="review-card-inner">
+            <div class="review-card-front">
+                <h3 class="review-author">Julian</h3>
+                <div class="review-rating">
+                    &#9733;&#9733;&#9733;&#9733;&#9734; <!-- 4 звезды -->
+                </div>
+                <div class="review-date">Опубликовано: 23 мая 2024</div>
+            </div>
+            <div class="review-card-back">
+                <p class="review-text">Очень понравился сервис!</p>
+                <div class="review-photos">
+                    <img src="photo1.jpg" alt="Фото 1">
+                    <img src="photo2.jpg" alt="Фото 2">
+                    <img src="photo3.jpg" alt="Фото 3">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="review-card">
+        <div class="review-card-inner">
+            <div class="review-card-front">
+                <h3 class="review-author">Fabian</h3>
+                <div class="review-rating">
+                    &#9733;&#9733;&#9733;&#9733;&#9734; <!-- 4 звезды -->
+                </div>
+                <div class="review-date">Опубликовано: 23 мая 2024</div>
+            </div>
+            <div class="review-card-back">
+                <p class="review-text">Очень понравился сервис!</p>
+                <div class="review-photos">
+                    <img src="photo1.jpg" alt="Фото 1">
+                    <img src="photo2.jpg" alt="Фото 2">
+                    <img src="photo3.jpg" alt="Фото 3">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="review-card">
+        <div class="review-card-inner">
+            <div class="review-card-front">
+                <h3 class="review-author">Tom</h3>
+                <div class="review-rating">
+                    &#9733;&#9733;&#9733;&#9733;&#9734; <!-- 4 звезды -->
+                </div>
+                <div class="review-date">Опубликовано: 23 мая 2024</div>
+            </div>
+            <div class="review-card-back">
+                <p class="review-text">Очень понравился сервис!</p>
+                <div class="review-photos">
+                    <img src="photo1.jpg" alt="Фото 1">
+                    <img src="photo2.jpg" alt="Фото 2">
+                    <img src="photo3.jpg" alt="Фото 3">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="review-card">
+        <div class="review-card-inner">
+            <div class="review-card-front">
+                <h3 class="review-author">David</h3>
+                <div class="review-rating">
+                    &#9733;&#9733;&#9733;&#9733;&#9734; <!-- 4 звезды -->
+                </div>
+                <div class="review-date">Опубликовано: 23 мая 2024</div>
+            </div>
+            <div class="review-card-back">
+                <p class="review-text">Очень понравился сервис!</p>
+                <div class="review-photos">
+                    <img src="photo1.jpg" alt="Фото 1">
+                    <img src="photo2.jpg" alt="Фото 2">
+                    <img src="photo3.jpg" alt="Фото 3">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="review-card">
+        <div class="review-card-inner">
+            <div class="review-card-front">
+                <h3 class="review-author">Moritz</h3>
+                <div class="review-rating">
+                    &#9733;&#9733;&#9733;&#9733;&#9734; <!-- 4 звезды -->
+                </div>
+                <div class="review-date">Опубликовано: 23 мая 2024</div>
+            </div>
+            <div class="review-card-back">
+                <p class="review-text">Очень понравился сервис!</p>
+                <div class="review-photos">
+                    <img src="photo1.jpg" alt="Фото 1">
+                    <img src="photo2.jpg" alt="Фото 2">
+                    <img src="photo3.jpg" alt="Фото 3">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="review-card">
+        <div class="review-card-inner">
+            <div class="review-card-front">
+                <h3 class="review-author">Sophie</h3>
+                <div class="review-rating">
+                    &#9733;&#9733;&#9733;&#9733;&#9734; <!-- 4 звезды -->
+                </div>
+                <div class="review-date">Опубликовано: 23 мая 2024</div>
+            </div>
+            <div class="review-card-back">
+                <p class="review-text">Очень понравился сервис!</p>
+                <div class="review-photos">
+                    <img src="photo1.jpg" alt="Фото 1">
+                    <img src="photo2.jpg" alt="Фото 2">
+                    <img src="photo3.jpg" alt="Фото 3">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="review-card">
+        <div class="review-card-inner">
+            <div class="review-card-front">
+                <h3 class="review-author">Theresa</h3>
+                <div class="review-rating">
+                    &#9733;&#9733;&#9733;&#9733;&#9734; <!-- 4 звезды -->
+                </div>
+                <div class="review-date">Опубликовано: 23 мая 2024</div>
+            </div>
+            <div class="review-card-back">
+                <p class="review-text">Очень понравился сервис!</p>
+                <div class="review-photos">
+                    <img src="photo1.jpg" alt="Фото 1">
+                    <img src="photo2.jpg" alt="Фото 2">
+                    <img src="photo3.jpg" alt="Фото 3">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="review-card">
+        <div class="review-card-inner">
+            <div class="review-card-front">
+                <h3 class="review-author">Jan</h3>
+                <div class="review-rating">
+                    &#9733;&#9733;&#9733;&#9733;&#9734; <!-- 4 звезды -->
+                </div>
+                <div class="review-date">Опубликовано: 23 мая 2024</div>
+            </div>
+            <div class="review-card-back">
+                <p class="review-text">Очень понравился сервис!</p>
+                <div class="review-photos">
+                    <img src="photo1.jpg" alt="Фото 1">
+                    <img src="photo2.jpg" alt="Фото 2">
+                    <img src="photo3.jpg" alt="Фото 3">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="review-card">
+        <div class="review-card-inner">
+            <div class="review-card-front">
+                <h3 class="review-author">Ben</h3>
+                <div class="review-rating">
+                    &#9733;&#9733;&#9733;&#9733;&#9734; <!-- 4 звезды -->
+                </div>
+                <div class="review-date">Опубликовано: 23 мая 2024</div>
+            </div>
+            <div class="review-card-back">
+                <p class="review-text">Очень понравился сервис!</p>
+                <div class="review-photos">
+                    <img src="photo1.jpg" alt="Фото 1">
+                    <img src="photo2.jpg" alt="Фото 2">
+                    <img src="photo3.jpg" alt="Фото 3">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<div id="footer-placeholder"></div>
+<script src="bewertungen.js"></script>
+<script src="/global.js"></script>
+</body>
+</html>

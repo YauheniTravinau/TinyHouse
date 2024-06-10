@@ -1,0 +1,9 @@
+# Игнорировать файлы package.json и package-lock.json
+package.json
+package-lock.json
+
+# Игнорировать файл сервера server.js
+server.js
+
+# Игнорировать папку с зависимостями node_modules
+node_modules/

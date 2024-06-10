@@ -1,0 +1,70 @@
+/*бегущая строка*/
+body {
+    overflow-x: hidden; /* Запрещаем горизонтальный скролл на уровне body */
+}
+
+.platforms-list {
+    width: 100%; /* Ширина равна 100% экрана */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    position: relative; /* Позиционируем относительно родителя */
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+.marquee {
+    white-space: nowrap;
+    animation: platformsSlideshow 120s linear infinite;
+    max-width: 100%; /* Максимальная ширина равна 100% */
+    color: #b8860b;
+}
+
+.company {
+    font-size: 21px;
+    display: inline-block;
+    padding-right: 50px; /* Расстояние между компаниями */
+    margin-left: 0; /* Убираем отступ слева */
+    color: black; /* Цвет текста внутри */
+}
+
+.company::before,
+.company::after {
+    content: "★"; /* Выводим звезду перед и после текста */
+    color: #B8860BFF; /* Цвет звезд */
+    padding: 0 5px; /* Расстояние между звездой и текстом */
+}
+
+@keyframes platformsSlideshow {
+    100% { transform: translateX(-100%); }
+}
+
+.thin-line {
+    border: none;
+    height: 1px; /* Толщина линии */
+    background-color: #b8860b; /* Цвет линии */
+    width: calc(300% + 40px); /* Ширина равна 100% + ширина padding */
+    margin-left: -40px; /* Сдвигаем линию влево на величину padding */
+}
+
+/* Стили для больших устройств (например, компьютеров) */
+@media (min-width: 768px) {
+    .platforms-list {
+        overflow: hidden; /* Скрываем содержимое за пределами экрана */
+    }
+}
+
+/* Стили для маленьких устройств (например, мобильных устройств) */
+@media (max-width: 767px) {
+    .platforms-list {
+        overflow-x: hidden; /* Разрешаем горизонтальную прокрутку */
+        white-space: nowrap; /* Запрещаем перенос текста на новую строку */
+    }
+
+    .marquee {
+        animation-duration: 30s; /* Новая длительность анимации для мобильной версии */
+    }
+}
+

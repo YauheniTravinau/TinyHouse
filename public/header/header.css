@@ -1,0 +1,19 @@
+/* Общие стили */
+.header {
+    text-align: center;
+}
+
+/* Стили для изображения */
+.header img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* Стили для устройств с шириной экрана до 768px */
+@media only screen and (max-width: 768px) {
+    .header img {
+        width: 100%;
+        height: auto;
+    }
+}

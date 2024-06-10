@@ -1,0 +1,323 @@
+/* Общие стили */
+* {
+    box-sizing: border-box;
+}
+
+/* Стили для заголовка h1 */
+h1 {
+    text-align: center;
+    margin-top: 100px; /* Измените значение по вашему усмотрению */
+}
+
+/* Стили для контейнеров */
+.outer-container {
+    display: flex;
+    justify-content: center;
+}
+
+.inner-container {
+    width: 80%;
+    max-width: 1200px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px; /* Добавлен отступ между контейнером и другими элементами */
+}
+
+/* Стили для галереи */
+.gallery {
+    flex: 1;
+    position: relative;
+    margin-right: 20px; /* Изменен отступ между галереей и деталями */
+}
+
+.big-image {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+}
+
+.thumbnails {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+/* Стили для миниатюр */
+.thumbnail {
+    position: relative; /* Для позиционирования псевдоэлементов */
+    width: 140px;
+    height: 100px;
+    cursor: pointer;
+    margin: 5px;
+    object-fit: cover;
+    transition: transform 0.3s ease; /* Плавное изменение масштаба */
+}
+
+.thumbnail:hover {
+    transform: scale(1.1); /* Увеличиваем масштаб при наведении */
+}
+
+
+/* Стили для поля ввода сообщения */
+textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-top: 5px;
+    max-height: 400px; /* Ограничение высоты поля сообщения до 500px */
+    min-height: 100px;
+    resize: vertical; /* Разрешение растяжения только вниз */
+}
+
+/* Стили для деталей */
+.details {
+    flex: 1;
+
+    margin-left: 160px;
+}
+
+/* Модальные стили */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    height: auto;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+}
+
+/* Стили для кнопок пролистывания */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* Стили для описания и тегов */
+.description-tags {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.description-tags p {
+    margin: 5px 0;
+}
+
+/* Стили для социальных иконок */
+.social-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.social-icon {
+    transition: transform 0.3s ease;
+    margin: 0 10px;
+}
+
+.social-icon:hover {
+    transform: scale(1.2) rotate(3deg);
+}
+
+/* Стили для формы */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-top: 5px;
+}
+
+button[type="submit"] {
+    background-color: transparent;
+    color: #000;
+    border: 2px solid #b8860b;
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #b8860b;
+    color: #fff;
+}
+
+/* Стили для фотографий */
+.photos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.photos img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 20px;
+}
+
+hr.custom-line {
+    border: none;
+    height: 2px;
+    background-color: #b8860b; /* Цвет темного золота */
+    width: 90%; /* Адаптируем ширину линии к ширине родительского контейнера */
+    max-width: 1300px; /* Максимальная ширина линии */
+    margin: 0 auto; /* Центрируем линию внутри контейнера */
+}
+
+h2 {
+    text-align: center;
+}
+
+.price {
+    margin: 0 auto;
+    width: fit-content;
+    color: #b8860b; /* Изменяем цвет на синий */
+}
+
+.gold-link:hover {
+    color: #b8860b; /* Измененный цвет при наведении (золотистый) */
+}
+
+/* Медиа-запросы для устройств с шириной экрана до 768px (таблеты и мобильные устройства) */
+@media screen and (max-width: 768px) {
+    .inner-container {
+        width: 90%; /* Увеличиваем ширину контейнера для более узких экранов */
+    }
+
+    .container {
+        flex-direction: column; /* Изменяем направление контейнера на вертикальное */
+    }
+
+    .details {
+        margin-left: 0; /* Удаляем отступ слева для деталей на узких экранах */
+        margin-top: 20px; /* Добавляем отступ сверху для деталей */
+    }
+
+    .gallery {
+        margin-right: 0; /* Удаляем отступ справа для галереи на узких экранах */
+    }
+
+    .custom-line {
+        width: 90%; /* Уменьшаем ширину линии на узких экранах */
+    }
+}
+
+/* Медиа-запросы для устройств с шириной экрана от 769px до 1200px (планшеты и некоторые десктопы) */
+@media screen and (min-width: 769px) and (max-width: 1200px) {
+    .inner-container {
+        width: 90%; /* Уменьшаем ширину контейнера для экранов среднего размера */
+    }
+
+    .container {
+        flex-direction: column; /* Изменяем направление контейнера на вертикальное */
+    }
+
+    .details {
+        margin-left: 0; /* Удаляем отступ слева для деталей на узких экранах */
+        margin-top: 20px; /* Добавляем отступ сверху для деталей */
+    }
+
+    .gallery {
+        margin-right: 0; /* Удаляем отступ справа для галереи на узких экранах */
+    }
+
+    .custom-line {
+        width: 90%; /* Уменьшаем ширину линии на узких экранах */
+    }
+}
+
+/* Медиа-запросы для устройств с шириной экрана от 1201px и выше (большие десктопы) */
+@media screen and (min-width: 1201px) {
+    .inner-container {
+        width: 80%; /* Возвращаем обычную ширину контейнера для больших экранов */
+    }
+
+    .container {
+        flex-direction: row; /* Возвращаем направление контейнера на горизонтальное */
+    }
+
+    .details {
+        margin-left: 160px; /* Возвращаем обычный отступ слева для деталей на больших экранах */
+        margin-top: 0; /* Удаляем отступ сверху для деталей */
+    }
+
+    .gallery {
+        margin-right: 20px; /* Возвращаем обычный отступ справа для галереи на больших экранах */
+    }
+
+    .custom-line {
+        width: 1300px; /* Возвращаем обычную ширину линии на больших экранах */
+    }
+}
+

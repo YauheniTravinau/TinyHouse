@@ -1,0 +1,342 @@
+/* Общие стили */
+body {
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+.bewertungen {
+    width: 60%;
+    padding: 10px;
+    background-color: #DAA520;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 0;
+    transition: background-color 0.3s, transform 0.3s ease;
+    margin: 0 auto;
+    display: block;
+}
+
+.bewertungen:hover {
+    background-color: #b8860b;
+    transform: rotate(3deg);
+}
+
+
+/* Кнопки "Да" и "Нет" */
+.yes-button, .no-button {
+    width: 100%;
+    padding: 10px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 0;
+    transition: background-color 0.3s, transform 0.3s ease;
+    margin: 5px;
+}
+
+.yes-button {
+    background-color: #DAA520;
+}
+
+.yes-button:hover {
+    background-color: #b8860b;
+    transform: rotate(3deg);
+}
+
+.no-button {
+    background-color: #FF6666;
+}
+
+.no-button:hover {
+    background-color: #CC0000;
+    transform: rotate(-3deg);
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #555;
+}
+
+/* Стили для полей выбора файлов */
+input[type="file"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+
+input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    min-height: 100px;
+    max-height: 200px;
+    resize: vertical;
+}
+
+
+.star-rating {
+    direction: rtl;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.star-rating input[type="radio"] {
+    display: none;
+}
+
+.star-rating label {
+    font-size: 40px;
+    color: #ccc;
+    cursor: pointer;
+}
+
+.star-rating label:hover,
+.star-rating label:hover ~ label,
+.star-rating input[type="radio"]:checked ~ label {
+    color: #b8860b;
+}
+
+/* Карточки отзывов */
+.review-card {
+    perspective: 1000px;
+    margin: 20px;
+    width: 300px;
+}
+
+.review-card-inner {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.review-card:hover .review-card-inner {
+    transform: rotateY(180deg);
+}
+
+.review-card-front,
+.review-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border: 1px solid #b8860b;
+    padding: 20px;
+    box-sizing: border-box;
+    background: #fff;
+}
+
+.review-card-back {
+    transform: rotateY(180deg);
+}
+
+.review-author {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.review-rating {
+    margin: 30px 0;
+    font-size: 30px;
+    color: #b8860b;
+}
+
+.review-date {
+    font-size: 12px;
+    color: gray;
+}
+
+.review-text {
+    font-size: 16px;
+    margin-top: 20px;
+    color: #555;
+    overflow: visible; /* Полный отзыв должен быть видимым без обрезки */
+}
+
+.review-photos img {
+    width: 30%;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+}
+
+/* Модальное окно */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.review-step {
+    display: none;
+}
+
+/* Контейнер карточек отзывов */
+.conteiner-card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Стили для модального окна полного отзыва */
+.full-review {
+    margin-top: 20px;
+}
+
+.full-review .review-author {
+    margin-bottom: 5px;
+    font-size: 24px;
+}
+
+.full-review .review-rating {
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.full-review .review-date {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #888;
+}
+
+.full-review .review-text {
+    font-size: 16px;
+    color: #555;
+}
+
+.full-review .review-photos {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Отображение полного отзыва при наведении */
+.review-text .full {
+    display: none;
+}
+
+.review-text:hover .preview {
+    display: none;
+}
+
+.review-text:hover .full {
+    display: block;
+}
+
+.review-card-back .review-text {
+    font-size: 16px;
+    color: #555;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.review-card:hover .review-card-back .review-photos img {
+    display: none;
+}
+.review-card-back .review-photos {
+    display: none; /* Скрываем фотографии по умолчанию */
+}
+
+.review-card-back:hover .review-photos {
+    display: flex; /* Отображаем фотографии при наведении на текст */
+}
+
+
+.review-card-back .review-text.full {
+    overflow: visible; /* Отображение всего текста */
+    white-space: normal; /* Разрешение переноса строк */
+}
+
+.confidential-info {
+    margin-top: 15px;
+    color: #888;
+    font-size: 0.9em;
+}
+
+/* Стили для увеличенной фотографии */
+.review-photos img:hover {
+    transform: scale(5.2); /* Увеличиваем изображение при наведении */
+    transition: transform 0.3s ease; /* Добавляем плавный переход */
+}
+
+/* Для мобильных устройств с шириной экрана до 768px */
+@media only screen and (max-width: 768px) {
+    /* Убираем увеличение изображений при наведении */
+    .review-photos img:hover {
+        transform: none;
+    }
+
+    /* Добавляем отступы между изображениями */
+    .review-photos img {
+        margin-bottom: 10px;
+    }
+
+    /* Делаем изображения в карточке отзыва полной ширины */
+    .review-photos {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .review-photos img {
+        width: 90%; /* Ширина изображения на мобильных устройствах */
+    }
+}

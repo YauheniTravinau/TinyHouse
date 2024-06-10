@@ -1,0 +1,392 @@
+h1, h2, h3 {
+    font-weight: 700;
+    text-align: center;
+}
+
+
+p {
+    font-weight: 400;
+}
+
+.social-icons img {
+    transition: transform 0.3s ease; /* Добавляем анимацию трансформации */
+}
+
+.social-icons a:hover img {
+    transform: scale(1.2) rotate(3deg); /* Увеличиваем размер и поворачиваем на 3 градуса */
+}
+
+.contact-info {
+    color: #b8860b;
+    text-align: center; /* Центрирование текста по центру */
+    font-size: 20px; /* Увеличенный размер шрифта */
+    line-height: 1.5; /* Межстрочный интервал */
+}
+
+.contact-link {
+    color: #b8860b;
+    text-decoration: none;
+    animation: colorChange 8s infinite alternate;
+    transition: text-decoration 0.5s ease;
+}
+
+.contact-link:hover {
+    text-decoration: underline;
+}
+
+@keyframes colorChange {
+    0% {
+        color: #b8860b;
+    }
+    50% {
+        color: #000000;
+    }
+    100% {
+        color: #b8860b;
+    }
+}
+
+.logos-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logos-container a {
+    margin: 0 10px; /* Отступы между логотипами */
+    transition: transform 0.3s ease; /* Анимация для свойства transform */
+}
+
+.logos-container a:hover {
+    transform: scale(1.1) rotate(3deg); /* Увеличиваем размер и поворачиваем на 3 градуса вправо при наведении */
+}
+
+#shareButton {
+    display: inline-block; /* Чтобы анимация работала как для блочных элементов */
+    margin: 0 10px; /* Отступы между кнопкой и логотипами */
+    transition: transform 0.3s ease; /* Анимация для свойства transform */
+    position: relative;
+}
+
+#shareButton:hover {
+    transform: scale(1.1) rotate(3deg); /* Увеличиваем размер и поворачиваем на 3 градуса вправо при наведении */
+}
+
+
+.products-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.product {
+    position: relative; /* Добавляем позиционирование для псевдоэлемента */
+    border: 1px solid #DAA520;
+    margin: 20px; /* увеличиваем расстояние между товарами */
+    text-align: center;
+    width: 800px;
+    height: 490px; /* Устанавливаем высоту товара */
+    display: flex; /* Добавляем flex контейнер */
+    flex-direction: column; /* Устанавливаем направление flex контейнера на колонки */
+    justify-content: center; /* Центрируем контент по вертикали */
+    background-size: contain; /* Изображение сохраняет пропорции внутри рамки */
+    background-repeat: no-repeat; /* Запрещаем повторять изображение */
+    background-position: center; /* Центрируем изображение */
+}
+
+.product-1 {
+    background-image: url('/images/GemütlichesTinyHouse.jpg');
+}
+
+.product-2 {
+    background-image: url('/images/HolzhausHarmonie.jpg');
+}
+
+.product::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Цвет затемнения с прозрачностью */
+    z-index: 0; /* Устанавливаем z-index ниже контента */
+}
+
+.product h2,
+.product h3,
+.product p,
+.product button {
+    z-index: 1; /* Устанавливаем z-index для текста и кнопки, чтобы они были над фоном */
+    position: relative; /* Добавляем позиционирование, чтобы z-index работал */
+}
+
+.product h2 {
+    font-size: 30px;
+    color: #FFF;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.product h3 {
+    font-size: 24px;
+    color: #FFF;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.product p {
+    font-size: 18px;
+    color: #FFF;
+    margin-bottom: 20px;
+}
+
+.product button {
+    background-color: #DAA520;
+    color: #FFF;
+    border: none;
+    padding: 15px 30px;
+    cursor: pointer;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+
+}
+
+.product button:hover {
+    background-color: #ffd700;
+    transform: rotate(3deg); /* При наведении поворачиваем кнопку на 3 градуса вправо */
+}
+
+.cities-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.city-container {
+    width: 300px;
+    margin: 0 10px;
+    text-align: center;
+    background-image: url('/images/33355566.png'); /* путь к вашему изображению фона */
+    background-size: cover;
+    background-position: center;
+    padding: 20px; /* добавьте отступы по вашему выбору */
+    border-radius: 10px; /* если нужно, добавьте скругление углов */
+}
+
+
+.city-image {
+    width: calc(100%); /* Уменьшаем ширину изображения на 4px, чтобы учесть толщину рамки */
+    border: 3px solid #b8860b; /* Добавляем золотую рамку толщиной 2px */
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 90% 100%, 0 100%); /* Обрезаем углы справа сверху и слева снизу */
+}
+
+
+
+.city-price {
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.city-button {
+    background-color: transparent;
+    color: #000;
+    border: 2px solid #b8860b; /* Изменено: Рамка всегда видна */
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.city-button:hover {
+    background-color: #b8860b;
+    color: #fff;
+}
+
+.show-more-button {
+    display: block;
+    margin: 20px auto;
+    background-color: transparent;
+    color: #000;
+    border: 2px solid #b8860b;
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.show-more-button:hover {
+    background-color: #b8860b;
+    color: #fff;
+}
+
+.vignette p {
+    background-color: red;
+    padding: 5px;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(20%, -50%);
+}
+
+
+@media screen and (max-width: 768px) {
+    .products-container {
+        flex-direction: column; /* Изменяем направление контейнера на колонки */
+        align-items: center; /* Центрируем по горизонтали */
+    }
+    .product {
+        width: 100%; /* Полная ширина на мобильных устройствах */
+        height: auto; /* Автоматическая высота, чтобы контент мог занимать сколько нужно */
+        margin: 10px auto; /* Изменяем отступы */
+    }
+    .product h2 {
+        margin-top: 50px; /* Добавляем верхний отступ в 20px */
+    }
+    .vignette p {
+        transform: translate(0%, -50%); /* Перемещаем виньетку влево на 50% */
+    }
+    .city-container {
+        width: 100%; /* Полная ширина на мобильных устройствах */
+        margin: 10px auto; /* Изменяем отступы */
+    }
+}
+
+/* новые продукты */
+.custom-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Центрирование по горизонтали */
+    align-items: center; /* Центрирование по вертикали */
+}
+
+.custom-item {
+    position: relative;
+    margin: 10px;
+    overflow: hidden;
+}
+
+.custom-title {
+    text-align: center;
+}
+
+.custom-product-info {
+    position: relative;
+}
+
+.custom-image {
+    width: 700px; /* Ширина изображения */
+    height: 450px; /* Высота изображения */
+    display: block;
+    margin: auto; /* Центрируем изображение по горизонтали */
+}
+
+.custom-button {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%; /* Кнопка на всю ширину */
+    background-color: #daa520;
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    display: block;
+    margin-top: 0;
+    transition: background-color 0.3s; /* Добавляем плавный переход цвета фона */
+    font-weight: bold; /* Жирный текст */
+    color: white; /* Белый цвет текста */
+
+}
+
+.custom-button:hover {
+    background-color: #ffd700; /* Новый цвет фона при наведении */
+}
+
+.custom-vignette p {
+    background-color: #daa520;
+    color: #ffffff; /* Новый цвет текста */
+    font-weight: bold; /* Жирный текст */
+    font-size: 24px; /* Увеличенный размер шрифта */
+    padding: 5px;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(20%, -50%);
+    text-shadow: 2px 2px 2px black; /* Добавляем обводку черного цвета */
+}
+
+@media screen and (max-width: 768px) {
+    .custom-image {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .custom-button {
+        font-size: 14px;
+        padding: 10px;
+        opacity: 0.8;
+    }
+    .custom-button span {
+        display: inline-block;
+        vertical-align: middle;
+    }
+}
+
+/*временный банер*/
+.shift-left {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+@media only screen and (max-width: 768px) {
+    .shift-left {
+        width: 50%; /* Уменьшаем ширину изображения до 50% */
+    }
+}
+
+/* Для устройств с шириной экрана от 769 пикселей до 1024 пикселей (например, планшеты в портретной ориентации) */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .shift-left {
+        width: 70%; /* Уменьшаем ширину изображения до 70% */
+    }
+}
+
+/* Для устройств с шириной экрана от 1025 пикселей (например, ноутбуки и настольные компьютеры) */
+@media only screen and (min-width: 1025px) {
+    .shift-left {
+        width: auto; /* Возвращаем исходный размер изображения */
+    }
+}
+
+/*иконки посещаемости*/
+.stat {
+    display: flex; /* Делает дочерние элементы flex-items */
+    justify-content: center; /* Центрирует дочерние элементы по горизонтали */
+    align-items: center; /* Центрирует дочерние элементы по вертикали */
+}
+
+.stat-item {
+    padding: 10px; /* Создает отступ внутри рамки */
+}
+
+/*второе фото на кнопке*/
+.custom-image {
+    transition: opacity 0.3s ease;
+}
+
+.custom-button {
+    cursor: pointer;
+}

@@ -1,0 +1,113 @@
+/* Общие стили для рубрики "Популярные товары" */
+#popular-products {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.products-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.item-container {
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #DAA520; /* Золотистый цвет рамки */
+    border-radius: 0; /* Убираем закругленные углы */
+    width: 200px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.8); /* Более светлый цвет фона */
+    position: relative;
+}
+
+.item-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.item-container:nth-child(odd) {
+    animation: moveProducts 5s infinite;
+}
+
+.item-container:nth-child(even) {
+    animation: moveProducts 5s infinite reverse;
+}
+
+.item-name,
+.item-price,
+.item-button {
+    z-index: 1; /* Устанавливаем z-index для текста и кнопки, чтобы они были над фоном */
+    position: relative; /* Добавляем позиционирование, чтобы z-index работал */
+}
+
+.item-name {
+    font-size: 18px;
+    color: #000; /* Черный цвет текста */
+    margin-bottom: 10px;
+}
+
+.item-image {
+    width: 100%;
+    border: 1px solid #DAA520; /* Золотистая рамка вокруг изображения */
+    border-radius: 0; /* Убираем закругленные углы */
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 90% 100%, 0 100%);
+}
+
+.item-price {
+    font-size: 16px;
+    color: #000; /* Черный цвет текста */
+    margin: 10px 0;
+}
+
+.item-button {
+    background-color: transparent;
+    color: #000; /* Черный цвет текста */
+    border: 1px solid #DAA520; /* Золотистая рамка вокруг кнопки */
+    border-radius: 0; /* Убираем закругленные углы */
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.item-button:hover {
+    background-color: #DAA520;
+    color: #000; /* Черный цвет текста */
+}
+
+hr.popular-products {
+    border: none;
+    height: 1px;
+    background-color: #b8860b; /* Цвет темного золота */
+    width: 90%; /* Адаптируем ширину линии к ширине родительского контейнера */
+    max-width: 1300px; /* Максимальная ширина линии */
+    margin: 0 auto; /* Центрируем линию внутри контейнера */
+}
+
+a {
+    text-decoration: none; /* Убираем подчеркивание для всех ссылок */
+}
+
+/* Анимация для передвижения элементов */
+@keyframes moveProducts {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-20px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Медиа-запрос для адаптивного дизайна */
+@media screen and (max-width: 768px) {
+    .item-container {
+        width: 100%; /* Полная ширина на мобильных устройствах */
+        max-width: 300px; /* Максимальная ширина для удобного отображения */
+    }
+}

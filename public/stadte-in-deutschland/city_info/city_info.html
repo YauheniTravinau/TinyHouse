@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Info</title>
+    <link rel="stylesheet" href="city_info.css">
+    <link rel="stylesheet" href="/global.css">
+</head>
+<body>
+<div class="container">
+    <div class="city-list">
+        <ul>
+            <li data-city="berlin" onclick="showCityInfo('berlin')">Berlin</li>
+            <li data-city="hamburg" onclick="showCityInfo('hamburg')">Hamburg</li>
+            <li data-city="munich" onclick="showCityInfo('munich')">Munich</li>
+            <li data-city="cologne" onclick="showCityInfo('cologne')">Cologne</li>
+            <li data-city="frankfurt" onclick="showCityInfo('frankfurt')">Frankfurt</li>
+            <li data-city="stuttgart" onclick="showCityInfo('stuttgart')">Stuttgart</li>
+            <li data-city="dusseldorf" onclick="showCityInfo('dusseldorf')">Düsseldorf</li>
+            <li data-city="dortmund" onclick="showCityInfo('dortmund')">Dortmund</li>
+            <li data-city="essen" onclick="showCityInfo('essen')">Essen</li>
+            <li data-city="leipzig" onclick="showCityInfo('leipzig')">Leipzig</li>
+            <li data-city="bremen" onclick="showCityInfo('bremen')">Bremen</li>
+            <li data-city="hannover" onclick="showCityInfo('hannover')">Hanover</li>
+            <li data-city="dresden" onclick="showCityInfo('dresden')">Dresden</li>
+            <li data-city="nuremberg" onclick="showCityInfo('nuremberg')">Nuremberg</li>
+            <li data-city="duisburg" onclick="showCityInfo('duisburg')">Duisburg</li>
+            <li data-city="bochum" onclick="showCityInfo('bochum')">Bochum</li>
+            <li data-city="wuppertal" onclick="showCityInfo('wuppertal')">Wuppertal</li>
+            <li data-city="bielefeld" onclick="showCityInfo('bielefeld')">Bielefeld</li>
+            <li data-city="bonn" onclick="showCityInfo('bonn')">Bonn</li>
+            <li data-city="mannheim" onclick="showCityInfo('mannheim')">Mannheim</li>
+            <li data-city="karlsruhe" onclick="showCityInfo('karlsruhe')">Karlsruhe</li>
+            <li data-city="wiesbaden" onclick="showCityInfo('wiesbaden')">Wiesbaden</li>
+            <li data-city="munster" onclick="showCityInfo('munster')">Münster</li>
+            <li data-city="augsburg" onclick="showCityInfo('augsburg')">Augsburg</li>
+            <li data-city="chemnitz" onclick="showCityInfo('chemnitz')">Chemnitz</li>
+            <li data-city="halle" onclick="showCityInfo('halle')">Halle</li>
+            <li data-city="krefeld" onclick="showCityInfo('krefeld')">Krefeld</li>
+            <li data-city="magdeburg" onclick="showCityInfo('magdeburg')">Magdeburg</li>
+            <li data-city="freiburg" onclick="showCityInfo('freiburg')">Freiburg</li>
+            <li data-city="recklinghausen" onclick="showCityInfo('recklinghausen')">Recklinghausen</li>
+            <li data-city="erfurt" onclick="showCityInfo('erfurt')">Erfurt</li>
+            <li data-city="mainz" onclick="showCityInfo('mainz')">Mainz</li>
+            <li data-city="leipzig" onclick="showCityInfo('leipzig')">Leipzig</li>
+            <li data-city="kiel" onclick="showCityInfo('kiel')">Kiel</li>
+            <li data-city="saarbrucken" onclick="showCityInfo('saarbrucken')">Saarbrücken</li>
+            <li data-city="potsdam" onclick="showCityInfo('potsdam')">Potsdam</li>
+            <li data-city="hagen" onclick="showCityInfo('hagen')">Hagen</li>
+            <li data-city="hamm" onclick="showCityInfo('hamm')">Hamm</li>
+            <li data-city="muelheim-an-der-ruhr" onclick="showCityInfo('muelheim-an-der-ruhr')">Mülheim an der Ruhr</li>
+            <li data-city="herne" onclick="showCityInfo('herne')">Herne</li>
+            <li data-city="ludwigshafen" onclick="showCityInfo('ludwigshafen')">Ludwigshafen</li>
+            <li data-city="leverkusen" onclick="showCityInfo('leverkusen')">Leverkusen</li>
+            <li data-city="oldenburg" onclick="showCityInfo('oldenburg')">Oldenburg</li>
+            <li data-city="neuss" onclick="showCityInfo('neuss')">Neuss</li>
+            <li data-city="heidelberg" onclick="showCityInfo('heidelberg')">Heidelberg</li>
+            <li data-city="darmstadt" onclick="showCityInfo('darmstadt')">Darmstadt</li>
+            <li data-city="paderborn" onclick="showCityInfo('paderborn')">Paderborn</li>
+            <li data-city="regensburg" onclick="showCityInfo('regensburg')">Regensburg</li>
+            <li data-city="ingolstadt" onclick="showCityInfo('ingolstadt')">Ingolstadt</li>
+            <li data-city="wurzburg" onclick="showCityInfo('wurzburg')">Würzburg</li>
+            <li data-city="wolfsburg" onclick="showCityInfo('wolfsburg')">Wolfsburg</li>
+            <li data-city="goettingen" onclick="showCityInfo('goettingen')">Göttingen</li>
+            <li data-city="ulm" onclick="showCityInfo('ulm')">Ulm</li>
+            <li data-city="offenbach" onclick="showCityInfo('offenbach')">Offenbach</li>
+            <li data-city="bottrop" onclick="showCityInfo('bottrop')">Bottrop</li>
+            <li data-city="pforzheim" onclick="showCityInfo('pforzheim')">Pforzheim</li>
+            <li data-city="recklinghausen" onclick="showCityInfo('recklinghausen')">Recklinghausen</li>
+            <li data-city="bremerhaven" onclick="showCityInfo('bremerhaven')">Bremerhaven</li>
+            <li data-city="bergisch-gladbach" onclick="showCityInfo('bergisch-gladbach')">Bergisch Gladbach</li>
+            <li data-city="hildesheim" onclick="showCityInfo('hildesheim')">Hildesheim</li>
+            <li data-city="worms" onclick="showCityInfo('worms')">Worms</li>
+            <li data-city="witten" onclick="showCityInfo('witten')">Witten</li>
+            <li data-city="ise" onclick="showCityInfo('ise')">Iserlohn</li>
+            <li data-city="tubingen" onclick="showCityInfo('tubingen')">Tübingen</li>
+            <li data-city="ludwigsburg" onclick="showCityInfo('ludwigsburg')">Ludwigsburg</li>
+            <li data-city="flensburg" onclick="showCityInfo('flensburg')">Flensburg</li>
+            <li data-city="marburg" onclick="showCityInfo('marburg')">Marburg</li>
+            <li data-city="velbert" onclick="showCityInfo('velbert')">Velbert</li>
+            <li data-city="viersen" onclick="showCityInfo('viersen')">Viersen</li>
+            <li data-city="minden" onclick="showCityInfo('minden')">Minden</li>
+            <li data-city="bayreuth" onclick="showCityInfo('bayreuth')">Bayreuth</li>
+            <li data-city="remscheid" onclick="showCityInfo('remscheid')">Remscheid</li>
+            <li data-city="konstanz" onclick="showCityInfo('konstanz')">Konstanz</li>
+            <li data-city="pirmasens" onclick="showCityInfo('pirmasens')">Pirmasens</li>
+            <li data-city="emden" onclick="showCityInfo('emden')">Emden</li>
+            <li data-city="fulda" onclick="showCityInfo('fulda')">Fulda</li>
+            <li data-city="passau" onclick="showCityInfo('passau')">Passau</li>
+            <li data-city="ravensburg" onclick="showCityInfo('ravensburg')">Ravensburg</li>
+            <li data-city="wetzlar" onclick="showCityInfo('wetzlar')">Wetzlar</li>
+            <li data-city="cottbus" onclick="showCityInfo('cottbus')">Cottbus</li>
+            <li data-city="lingen" onclick="showCityInfo('lingen')">Lingen</li>
+            <li data-city="russelsheim" onclick="showCityInfo('russelsheim')">Rüsselsheim</li>
+            <li data-city="soest" onclick="showCityInfo('soest')">Soest</li>
+            <li data-city="offenburg" onclick="showCityInfo('offenburg')">Offenburg</li>
+            <li data-city="gutersloh" onclick="showCityInfo('gutersloh')">Gütersloh</li>
+            <li data-city="fulda" onclick="showCityInfo('fulda')">Fulda</li>
+            <li data-city="elmshorn" onclick="showCityInfo('elmshorn')">Elmshorn</li>
+            <li data-city="lippstadt" onclick="showCityInfo('lippstadt')">Lippstadt</li>
+            <li data-city="greifswald" onclick="showCityInfo('greifswald')">Greifswald</li>
+            <li data-city="herford" onclick="showCityInfo('herford')">Herford</li>
+            <li data-city="neuwied" onclick="showCityInfo('neuwied')">Neuwied</li>
+            <li data-city="wendlingen-am-neckar" onclick="showCityInfo('wendlingen-am-neckar')">Wendlingen am Neckar</li>
+            <li data-city="waiblingen" onclick="showCityInfo('waiblingen')">Waiblingen</li>
+            <li data-city="ludenscheid" onclick="showCityInfo('ludenscheid')">Lüdenscheid</li>
+            <li data-city="weimar" onclick="showCityInfo('weimar')">Weimar</li>
+            <li data-city="homburg" onclick="showCityInfo('homburg')">Homburg</li>
+            <li data-city="baden-baden" onclick="showCityInfo('baden-baden')">Baden-Baden</li>
+            <li data-city="villingen-schwenningen" onclick="showCityInfo('villingen-schwenningen')">Villingen-Schwenningen</li>
+            <li data-city="schwabisch-gmund" onclick="showCityInfo('schwabisch-gmund')">Schwäbisch Gmünd</li>
+            <li data-city="amberg" onclick="showCityInfo('amberg')">Amberg</li>
+            <li data-city="ludwigshafen" onclick="showCityInfo('ludwigshafen')">Ludwigshafen am Rhein</li>
+            <li data-city="weimar" onclick="showCityInfo('weimar')">Weimar</li>
+            <li data-city="herne" onclick="showCityInfo('herne')">Herne</li>
+            <li data-city="hanau" onclick="showCityInfo('hanau')">Hanau</li>
+            <li data-city="bergisch-gladbach" onclick="showCityInfo('bergisch-gladbach')">Bergisch Gladbach</li>
+            <li data-city="bottrop" onclick="showCityInfo('bottrop')">Bottrop</li>
+            <li data-city="tuttlingen" onclick="showCityInfo('tuttlingen')">Tuttlingen</li>
+            <li data-city="dorsten" onclick="showCityInfo('dorsten')">Dorsten</li>
+            <li data-city="bruchsal" onclick="showCityInfo('bruchsal')">Bruchsal</li>
+            <li data-city="schwabisch-hall" onclick="showCityInfo('schwabisch-hall')">Schwäbisch Hall</li>
+            <li data-city="aalen" onclick="showCityInfo('aalen')">Aalen</li>
+            <li data-city="ratingen" onclick="showCityInfo('ratingen')">Ratingen</li>
+            <li data-city="lunen" onclick="showCityInfo('lunen')">Lünen</li>
+            <li data-city="konstanz" onclick="showCityInfo('konstanz')">Konstanz</li>
+            <li data-city="viersen" onclick="showCityInfo('viersen')">Viersen</li>
+            <li data-city="goppingen" onclick="showCityInfo('goppingen')">Göppingen</li>
+            <li data-city="bad-homburg" onclick="showCityInfo('bad-homburg')">Bad Homburg</li>
+            <li data-city="schwerin" onclick="showCityInfo('schwerin')">Schwerin</li>
+            <li data-city="esslingen" onclick="showCityInfo('esslingen')">Esslingen am Neckar</li>
+            <li data-city="warendorf" onclick="showCityInfo('warendorf')">Warendorf</li>
+            <li data-city="rostock" onclick="showCityInfo('rostock')">Rostock</li>
+            <li data-city="duren" onclick="showCityInfo('duren')">Düren</li>
+            <li data-city="kempten" onclick="showCityInfo('kempten')">Kempten (Allgäu)</li>
+            <li data-city="mosbach" onclick="showCityInfo('mosbach')">Mosbach</li>
+            <li data-city="bocholt" onclick="showCityInfo('bocholt')">Bocholt</li>
+            <li data-city="siegburg" onclick="showCityInfo('siegburg')">Siegburg</li>
+            <li data-city="hof" onclick="showCityInfo('hof')">Hof</li>
+            <li data-city="filderstadt" onclick="showCityInfo('filderstadt')">Filderstadt</li>
+            <li data-city="norderstedt" onclick="showCityInfo('norderstedt')">Norderstedt</li>
+            <li data-city="emden" onclick="showCityInfo('emden')">Emden</li>
+            <li data-city="gummersbach" onclick="showCityInfo('gummersbach')">Gummersbach</li>
+            <li data-city="witten" onclick="showCityInfo('witten')">Witten</li>
+            <li data-city="herten" onclick="showCityInfo('herten')">Herten</li>
+            <li data-city="gottingen" onclick="showCityInfo('gottingen')">Göttingen</li>
+            <li data-city="cottbus" onclick="showCityInfo('cottbus')">Cottbus</li>
+            <li data-city="bad-salzuflen" onclick="showCityInfo('bad-salzuflen')">Bad Salzuflen</li>
+            <li data-city="luneburg" onclick="showCityInfo('luneburg')">Lüneburg</li>
+            <li data-city="baden-baden" onclick="showCityInfo('baden-baden')">Baden-Baden</li>
+            <li data-city="elmshorn" onclick="showCityInfo('elmshorn')">Elmshorn</li>
+        </ul>
+    </div>
+    <div class="city-info" id="city-info">
+        <br>
+        <h2>Erfülle deinen Traum: Bestelle ein &#9733; <span style="color:#b8860b;">Tiny House</span> &#9733; in deine Stadt.</h2>
+        <div class="stars-container">
+            <span class="line"></span>
+            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="line"></span>
+        </div>
+        <div class="city-details" id="berlin">
+            <div class="column">
+                <h3 class="city-name">Bochum</h3>
+                <img class="city-image" src="/images/GemütlichesTinyHouse.jpg" alt="Мюнхен, Германия">
+                <h3 class="city-price">&euro; 17 500</h3>
+                <button class="city-button" data-page="/stadte-in-deutschland/berlin.html" onclick="window.location.href = this.getAttribute('data-page')">Mehr Fotos</button>
+            </div>
+            <div class="column">
+                <h3 class="city-name">Bochum</h3>
+                <img class="city-image" src="/images/GemütlichesTinyHouse.jpg" alt="Мюнхен, Германия">
+                <h3 class="city-price">&euro; 17 500</h3>
+                <button class="city-button" data-page="/stadte-in-deutschland/berlin.html" onclick="window.location.href = this.getAttribute('data-page')">Mehr Fotos</button>
+            </div>
+            <div class="column">
+                <h3 class="city-name">Bochum</h3>
+                <img class="city-image" src="/images/GemütlichesTinyHouse.jpg" alt="Мюнхен, Германия">
+                <h3 class="city-price">&euro; 17 500</h3>
+                <button class="city-button" data-page="/stadte-in-deutschland/berlin.html" onclick="window.location.href = this.getAttribute('data-page')">Mehr Fotos</button>
+            </div>
+            <div class="column">
+                <h3 class="city-name">Bochum</h3>
+                <img class="city-image" src="/images/GemütlichesTinyHouse.jpg" alt="Мюнхен, Германия">
+                <h3 class="city-price">&euro; 17 500</h3>
+                <button class="city-button" data-page="/stadte-in-deutschland/berlin.html" onclick="window.location.href = this.getAttribute('data-page')">Mehr Fotos</button>
+            </div>
+        </div>
+        <div class="city-details" id="hamburg">
+            <div class="column">
+                <h3 class="city-name">Bochum</h3>
+                <img class="city-image" src="/images/GemütlichesTinyHouse.jpg" alt="Мюнхен, Германия">
+                <h3 class="city-price">&euro; 17 500</h3>
+                <button class="city-button">Mehr Fotos</button>
+            </div>
+            <div class="column">
+                <h3 class="city-name">Bochum</h3>
+                <img class="city-image" src="/images/GemütlichesTinyHouse.jpg" alt="Мюнхен, Германия">
+                <h3 class="city-price">&euro; 17 500</h3>
+                <button class="city-button">Mehr Fotos</button>
+            </div>
+            <div class="column">
+                <h3 class="city-name">Bochum</h3>
+                <img class="city-image" src="/images/GemütlichesTinyHouse.jpg" alt="Мюнхен, Германия">
+                <h3 class="city-price">&euro; 17 500</h3>
+                <button class="city-button">Mehr Fotos</button>
+            </div>
+            <div class="column">
+                <h3 class="city-name">Bochum</h3>
+                <img class="city-image" src="/images/GemütlichesTinyHouse.jpg" alt="Мюнхен, Германия">
+                <h3 class="city-price">&euro; 17 500</h3>
+                <button class="city-button">Mehr Fotos</button>
+            </div>
+        </div>
+        <div class="city-details" id="munich">
+            <div class="column">
+                <h3 class="city-name">Bochum</h3>
+                <img class="city-image" src="/images/GemütlichesTinyHouse.jpg" alt="Мюнхен, Германия">
+                <h3 class="city-price">&euro; 17 500</h3>
+                <button class="city-button">Mehr Fotos</button>
+            </div>
+            <div class="column">
+                <h3 class="city-name">Bochum</h3>
+                <img class="city-image" src="/images/GemütlichesTinyHouse.jpg" alt="Мюнхен, Германия">
+                <h3 class="city-price">&euro; 17 500</h3>
+                <button class="city-button">Mehr Fotos</button>
+            </div>
+            <div class="column">
+                <h3 class="city-name">Bochum</h3>
+                <img class="city-image" src="/images/GemütlichesTinyHouse.jpg" alt="Мюнхен, Германия">
+                <h3 class="city-price">&euro; 17 500</h3>
+                <button class="city-button">Mehr Fotos</button>
+            </div>
+            <div class="column">
+                <h3 class="city-name">Bochum</h3>
+                <img class="city-image" src="/images/GemütlichesTinyHouse.jpg" alt="Мюнхен, Германия">
+                <h3 class="city-price">&euro; 17 500</h3>
+                <button class="city-button">Mehr Fotos</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="city_info.js"></script>
+</body>
+</html>

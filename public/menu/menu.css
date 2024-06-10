@@ -1,0 +1,105 @@
+.nav-custom {
+    border: 1px solid #DAA520;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.ul-custom {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.li-custom {
+    display: inline;
+}
+
+.li-custom:not(:last-child) {
+    border-right: 1px solid #DAA520;
+}
+
+.a-custom {
+    display: inline-block;
+    padding: 30px;
+    text-decoration: none;
+    color: #B8860B;
+    font-size: 18px;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.a-custom:hover {
+    transform: translateY(-4px) rotate(3deg);
+}
+
+.icon-custom {
+    width: 32px;
+    height: 32px;
+    vertical-align: middle;
+    margin-right: 8px; /* Отступ между иконкой и текстом */
+    animation: pulse 1s infinite; /* Анимация пульсации всегда активна */
+    transform: rotate(3deg); /* Поворот иконки на 3 градуса */
+}
+
+@keyframes pulse {
+    0% {
+        transform: rotate(3deg) scale(1);
+    }
+    50% {
+        transform: rotate(3deg) scale(1.1);
+    }
+    100% {
+        transform: rotate(3deg) scale(1);
+    }
+}
+
+.logo-container-custom {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.logo-custom {
+    border: 2px solid #B8860B;
+    padding: 10px;
+    background-color: #FFF8DC;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-custom ul li a::before {
+    content: url('/../images/free-icon.png');
+    display: block;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 70%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.nav-custom ul li a:hover::before {
+    opacity: 1;
+}
+
+@media only screen and (max-width: 768px) {
+    .nav-custom {
+        padding: 10px;
+    }
+
+    .a-custom {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .logo-custom {
+        font-size: 14px; /* Уменьшаем размер шрифта логотипа */
+        padding: 5px; /* Уменьшаем внутренний отступ логотипа */
+    }
+}

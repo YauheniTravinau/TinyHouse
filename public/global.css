@@ -1,0 +1,167 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.stars-container {
+    text-align: center;
+}
+.stars {
+    display: inline-block;
+    font-size: 24px; /* Регулируйте размер звезд */
+    color: #b8860b; /* Цвет звезд */
+}
+.line {
+    display: inline-block;
+    width: 20%;
+    border-top: 2px solid #b8860b; /* Цвет линии совпадает с цветом звезд */
+    margin-top: 10px; /* Регулируйте расстояние между звездами и линиями */
+}
+
+.center {
+    text-align: center;
+}
+
+.gold {
+    color: #b8860b;
+}
+.gold-frame {
+    border: 2px solid #b8860b;
+    padding: 10px;
+}
+
+.header, .menu, .content, .footer {
+    margin: 0; /* Одинаковые отступы со всех сторон */
+    padding: 6px; /* Одинаковые отступы со всех сторон */
+}
+
+/*скролл вверх*/
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    width: 40px;
+    height: 40px;
+    background-color: #b8860b;
+    border-radius: 10px; /* Закругленные углы */
+    color: white; /* Белые стрелки */
+    font-weight: bold;
+    font-size: 24px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    border: none; /* Убираем обводку */
+}
+
+#scrollToTopBtn:before {
+    content: "↑"; /* Символ стрелки */
+}
+
+#scrollToTopBtn:hover {
+    background-color: #ffd700;
+    color: white;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Медиазапрос для устройств с шириной экрана меньше 768px */
+@media (max-width: 768px) {
+    #scrollToTopBtn {
+        width: 35px;
+        height: 35px;
+        font-size: 20px;
+    }
+}
+
+
+
+/*контакты справа страницы*/
+.sticky-buttons {
+    position: fixed;
+    top: 60%;
+    right: 20px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    z-index: 9999;
+}
+
+.phone-btn,
+.email-btn {
+    position: relative;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #b8860b;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.phone-btn i,
+.email-btn i {
+    font-size: 20px;
+}
+
+.phone-btn:hover,
+.email-btn:hover {
+    background-color: #ffd700;
+}
+
+.pulse {
+    position: absolute;
+    top: calc(50% - 30px); /* Располагаем пульсацию посередине контейнера */
+    left: calc(50% - 30px); /* Располагаем пульсацию посередине контейнера */
+    width: 60px;
+    height: 60px;
+    background-color: rgb(184, 134, 11);
+    border-radius: 15px; /* Задаем радиус закругления углов */
+    animation: pulseAnimation 2s infinite ease-out;
+    z-index: -1; /* Пульсация под кнопкой */
+}
+
+@keyframes pulseAnimation {
+    0% {
+        transform: scale(0.8);
+        opacity: 0.7;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(0.8);
+        opacity: 0.7;
+    }
+}
+
+/* Медиа-запросы для адаптации на разных экранах */
+@media only screen and (max-width: 768px) {
+    .sticky-buttons {
+        right: 10px; /* Изменяем правое смещение */
+        top: 70%; /* Перемещаем контакты ниже */
+        transform: translateY(-50%);
+        margin-right: 10px; /* Добавляем отступ справа */
+    }
+
+    .phone-btn,
+    .email-btn {
+        padding: 8px; /* Изменяем размеры кнопок */
+        margin-bottom: 8px;
+    }
+
+    .phone-btn i,
+    .email-btn i {
+        font-size: 18px; /* Уменьшаем размер иконок */
+    }
+    .pulse {
+        width: 40px; /* Уменьшаем размер пульсации */
+        height: 40px; /* Уменьшаем размер пульсации */
+        top: calc(50% - 20px); /* Корректируем положение пульсации */
+        left: calc(50% - 20px); /* Корректируем положение пульсации */
+    }
+}

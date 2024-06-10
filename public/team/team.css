@@ -1,0 +1,191 @@
+/* Общие стили */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.team-container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.team-container h1 {
+    color: #b8860b;
+    margin-top: 50px;
+}
+
+.employee-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.employee-card {
+    background-color: #fff;
+    border: 2px solid #b8860b;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    padding: 20px;
+    width: calc(33.333% - 40px);
+    max-width: 400px;
+    transition: transform 0.3s;
+}
+
+.employee-card:hover {
+    transform: scale(1.05);
+}
+
+.employee-photo {
+    border: 3px solid #b8860b;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.employee-info h2,
+.employee-info h3 {
+    color: #b8860b;
+}
+
+.employee-info h2 {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+.employee-info h3 {
+    font-size: 1.2em;
+    margin: 5px 0;
+}
+
+.employee-info p {
+    font-size: 1em;
+    color: #555;
+    margin: 5px 0;
+}
+
+.employee-info a {
+    color: #b8860b;
+    text-decoration: none;
+}
+
+.employee-info a:hover {
+    text-decoration: underline;
+}
+
+.social-links {
+    margin-top: 10px;
+}
+
+
+#feedback-form {
+    max-width: 650px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #b8860b;
+}
+
+#feedback-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+#feedback-form input[type="text"],
+#feedback-form input[type="email"],
+#feedback-form input[type="tel"],
+#feedback-form textarea,
+#feedback-form input[type="submit"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    height: 40px;
+}
+
+#feedback-form textarea {
+    resize: vertical;
+    min-height: 80px;
+    max-height: 200px;
+}
+
+#feedback-form input[type="submit"] {
+    background-color: #DAA520;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#feedback-form input[type="submit"]:hover {
+    background-color: #b8860b;
+}
+
+.stars-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.line {
+    width: 20px;
+    height: 1px;
+    background-color: #b8860b;
+    margin: 0 10px;
+}
+
+.stars {
+    color: #b8860b;
+    font-size: 1.5em;
+}
+
+@media (max-width: 1024px) {
+    .employee-card {
+        width: calc(50% - 40px);
+    }
+}
+
+@media (max-width: 768px) {
+    .team-container {
+        width: 95%;
+    }
+
+    .employee-card {
+        width: 100%;
+        margin: 20px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .team-container h1 {
+        font-size: 1.5em;
+    }
+
+    .employee-photo {
+        width: 120px;
+        height: 120px;
+    }
+
+    .employee-info h2 {
+        font-size: 1.2em;
+    }
+
+    .employee-info h3 {
+        font-size: 1em;
+    }
+
+    .employee-info p {
+        font-size: 0.9em;
+    }
+
+    .line {
+        margin: 0 5px;
+    }
+
+    .stars {
+        font-size: 1.2em;
+    }
+}
