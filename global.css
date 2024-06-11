@@ -142,7 +142,6 @@ body {
     .sticky-buttons {
         right: 10px; /* Изменяем правое смещение */
         top: 75%; /* Перемещаем контакты ниже */
-        z-index: 9999;
     }
 
     .phone-btn,
