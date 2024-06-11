@@ -96,11 +96,11 @@ p {
 }
 
 .product-1 {
-    background-image: url('/images/GemütlichesTinyHouse.jpg');
+    background-image: url('/public/images/GemütlichesTinyHouse.jpg');
 }
 
 .product-2 {
-    background-image: url('/images/HolzhausHarmonie.jpg');
+    background-image: url('/public/images/HolzhausHarmonie.jpg');
 }
 
 .product::before {
@@ -173,7 +173,7 @@ p {
     width: 300px;
     margin: 0 10px;
     text-align: center;
-    background-image: url('/images/33355566.png'); /* путь к вашему изображению фона */
+    background-image: url('/public/images/33355566.png'); /* путь к вашему изображению фона */
     background-size: cover;
     background-position: center;
     padding: 20px; /* добавьте отступы по вашему выбору */
