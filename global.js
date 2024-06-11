@@ -54,9 +54,9 @@ function initBanners() {
     const slides = document.querySelectorAll('.slide');
 
     const mainImages = [
-        "/public/images/GemütlichesTinyHouse.jpg",
+        "/public/images/GemutlichesTinyHouse.jpg",
         "/public/images/HolzhausHarmonie.jpg",
-        "/public/images/MobilheimIdylle.jpg",
+        "/public/images/Mobilheimdylle.jpg",
         "/public/images/WanderlustMobilhaus.jpg",
         "/public/images/FerienhausFlair.jpg"
     ];
@@ -64,9 +64,9 @@ function initBanners() {
     const secondaryImages = [
         "/public/images/FerienhausFlair.jpg",
         "/public/images/WanderlustMobilhaus.jpg",
-        "/public/images/MobilheimIdylle.jpg",
+        "/public/images/Mobilheimdylle.jpg",
         "/public/images/HolzhausHarmonie.jpg",
-        "/public/images/GemütlichesTinyHouse.jpg"
+        "/public/images/GemutlichesTinyHouse.jpg"
     ];
 
     let currentSlide = 0;
