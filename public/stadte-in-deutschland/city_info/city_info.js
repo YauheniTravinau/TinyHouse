@@ -27,5 +27,5 @@ function includeHTML(id, url) {
 
 // Подключаем содержимое HTML-файла к элементу с id "city-info"
 window.onload = function() {
-    includeHTML("city-info", "/stadte-in-deutschland/city_info/city_info.html");
+    includeHTML("city-info", "/public/stadte-in-deutschland/city_info/city_info.html");
 };
