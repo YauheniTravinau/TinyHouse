@@ -141,8 +141,7 @@ body {
 @media only screen and (max-width: 768px) {
     .sticky-buttons {
         right: 10px; /* Изменяем правое смещение */
-        top: 70%; /* Перемещаем контакты ниже */
-        margin-right: 10px; /* Добавляем отступ справа */
+        top: 50%; /* Перемещаем контакты ниже */
     }
 
     .phone-btn,
