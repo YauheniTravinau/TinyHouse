@@ -72,7 +72,7 @@
 }
 
 .nav-custom ul li a::before {
-    content: url('/../images/free-icon.png');
+    content: url('/public/images/free-icon.png');
     display: block;
     width: 24px;
     height: 24px;
