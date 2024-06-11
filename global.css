@@ -140,6 +140,7 @@ body {
 /* Медиа-запросы для адаптации на разных экранах */
 @media only screen and (max-width: 768px) {
     .sticky-buttons {
+        position: fixed;
         right: 10px; /* Изменяем правое смещение */
         top: 75%; /* Перемещаем контакты ниже */
     }
