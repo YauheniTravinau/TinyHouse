@@ -144,6 +144,7 @@ body {
         top: 75%; /* Перемещаем контакты ниже */
         display: flex;
         flex-direction: column;
+        z-index: 9999;
     }
 
     .phone-btn,
