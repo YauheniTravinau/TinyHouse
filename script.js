@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 /*кнопка перехода на товар*/
 function redirectToProductPage() {
-    window.location.href = '/products/products.html';
+    window.location.href = '/public/products/products.html';
 }
 
 /* Статистика посещаемости */

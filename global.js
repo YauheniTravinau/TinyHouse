@@ -102,16 +102,16 @@ window.onload = initBanners;
 
 // Выполняем все скрипты после полной загрузки DOM
 window.addEventListener('DOMContentLoaded', function() {
-    loadContent('/popular-products/popular-products.html', 'popular-products');
-    loadContent('/running-line/running-line.html', 'running-line');
+    loadContent('/public/popular-products/popular-products.html', 'popular-products');
+    loadContent('/public/running-line/running-line.html', 'running-line');
 
-    fetchContent('/header/header.html', '#header-placeholder');
-    fetchContent('/footer/footer.html', '#footer-placeholder');
-    fetchContent('/menu/menu.html', '#menu');
+    fetchContent('/public/header/header.html', '#header-placeholder');
+    fetchContent('/public/footer/footer.html', '#footer-placeholder');
+    fetchContent('/public/menu/menu.html', '#menu');
 
     addShareButtonListener();
 
-    fetch('/banners/banners.html')
+    fetch('/public/banners/banners.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('banners').innerHTML = data;
@@ -141,7 +141,7 @@ function scrollToTop() {
 /*контакты справа страницы*/
 const divElement = document.createElement('div');
 
-fetch('/icon-contact/icon-contact.html') // Замените путь_к_вашему_html_файлу.html на фактический путь к вашему HTML-файлу
+fetch('/public/icon-contact/icon-contact.html') // Замените путь_к_вашему_html_файлу.html на фактический путь к вашему HTML-файлу
     .then(response => response.text())
     .then(html => {
         // Устанавливаем содержимое загруженного HTML в divElement
