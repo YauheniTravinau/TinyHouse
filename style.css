@@ -167,6 +167,8 @@ p {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    max-width: 2400px;
+    margin: 0 auto;
 }
 
 .city-container {
@@ -293,6 +295,7 @@ h4 button {
     flex-wrap: wrap;
     justify-content: center; /* Центрирование по горизонтали */
     align-items: center; /* Центрирование по вертикали */
+    padding: 20px;
 }
 
 .custom-item {

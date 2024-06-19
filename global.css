@@ -31,7 +31,7 @@ body {
     padding: 10px;
 }
 
-/* скролл вверх */
+/*скролл вверх*/
 #scrollToTopBtn {
     position: fixed;
     bottom: 20px;
@@ -50,12 +50,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center; /* Центрирование текста */
 }
 
 #scrollToTopBtn:before {
     content: "↑"; /* Символ стрелки */
-    display: block; /* Убедимся, что это блочный элемент */
 }
 
 #scrollToTopBtn:hover {
@@ -73,6 +71,11 @@ body {
         width: 35px;
         height: 35px;
         font-size: 20px;
+    }
+
+    #scrollToTopContainer {
+        bottom: 10px;
+        right: 10px;
     }
 }
 
