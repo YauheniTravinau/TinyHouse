@@ -2,6 +2,8 @@
     border: 1px solid #DAA520;
     text-align: center;
     background-color: #FFF8DC; /* Добавляем цвет фона */
+    padding: 20px;
+    margin: 10px;
 }
 
 .footer a {

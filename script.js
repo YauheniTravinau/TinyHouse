@@ -214,3 +214,110 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
+
+/*лайк + количество купленных*/
+document.addEventListener('DOMContentLoaded', function() {
+    const likeButtons = document.querySelectorAll('.like-button');
+    const likeCounts = document.querySelectorAll('.like-count');
+    const soldCounts = document.querySelectorAll('.sold-count');
+
+    // Функция для генерации случайного числа лайков (от 0 до 621)
+    function generateRandomLikes() {
+        return Math.floor(Math.random() * 621);
+    }
+
+    // Функция для вычисления продаж (2% от количества лайков)
+    function calculateSales(likes) {
+        return Math.ceil(likes * 0.02);
+    }
+
+    let initialLikes = []; // Массив для хранения начальных значений лайков
+    let initialSales = []; // Массив для хранения начальных значений продаж
+
+    // Инициализация лайков и продаж при первой загрузке страницы
+    likeCounts.forEach(function(likeCount, index) {
+        // Проверка, были ли уже инициализированы лайки на эту карточку
+        let storedLikes = localStorage.getItem(`city_${index}_likes`);
+        if (storedLikes !== null) {
+            initialLikes[index] = parseInt(storedLikes);
+        } else {
+            initialLikes[index] = generateRandomLikes();
+            localStorage.setItem(`city_${index}_likes`, initialLikes[index]);
+        }
+
+        initialSales[index] = calculateSales(initialLikes[index]);
+
+        likeCount.textContent = initialLikes[index]; // Установка начального значения лайков
+        soldCounts[index].textContent = initialSales[index]; // Установка начального значения продаж
+
+        // Проверка, был ли уже отмечен лайк на этой карточке
+        let isLiked = localStorage.getItem(`city_${index}_liked`);
+        if (isLiked !== null) {
+            likeButtons[index].disabled = true; // Если отмечен, делаем кнопку неактивной
+        }
+    });
+
+    // Добавление обработчика события клика на каждую кнопку лайка
+    likeButtons.forEach(function(button, index) {
+        button.addEventListener('click', function() {
+            let currentLikes = parseInt(likeCounts[index].textContent);
+            let newLikes = currentLikes + 1;
+
+            // Обновление отображения лайков
+            likeCounts[index].textContent = newLikes;
+
+            // Сохранение нового значения лайков в localStorage
+            localStorage.setItem(`city_${index}_likes`, newLikes.toString());
+
+            // Сохранение информации о том, что лайк на этой карточке уже был отмечен
+            localStorage.setItem(`city_${index}_liked`, 'true');
+
+            // Делаем кнопку неактивной после нажатия
+            button.disabled = true;
+
+            // Продажи не изменяются при увеличении лайков, используем изначальное значение
+            soldCounts[index].textContent = initialSales[index];
+        });
+    });
+
+    // Функция для проверки наступления нового дня (полночь) и сброса данных
+    function checkNewDayAndReset() {
+        let now = new Date();
+        let currentHour = now.getHours();
+        let currentMinute = now.getMinutes();
+
+        // Если наступила полночь, сбрасываем данные
+        if (currentHour === 0 && currentMinute === 0) {
+            resetData();
+        }
+    }
+
+    // Функция для сброса данных
+    function resetData() {
+        // Очищаем localStorage для лайков и продаж
+        localStorage.clear();
+
+        // Перезагружаем страницу для начала с новыми данными
+        location.reload();
+    }
+
+    // Устанавливаем интервал для проверки наступления нового дня (каждую минуту)
+    setInterval(checkNewDayAndReset, 60000);
+
+    // Пример изменения лайков и продаж каждый час
+    setInterval(function() {
+        likeCounts.forEach(function(likeCount, index) {
+            let currentLikes = parseInt(likeCount.textContent);
+            let increase = Math.floor(Math.random() * 39); // случайное увеличение от 0 до 10
+
+            let newLikes = currentLikes + increase;
+            likeCount.textContent = newLikes;
+
+            // Обновление сохраненного значения лайков в localStorage
+            localStorage.setItem(`city_${index}_likes`, newLikes.toString());
+        });
+    }, 3600000); // Каждый час (в миллисекундах)
+
+});
+
+

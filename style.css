@@ -180,14 +180,37 @@ p {
     border-radius: 10px; /* если нужно, добавьте скругление углов */
 }
 
+h4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px; /* Отступ сверху */
+    margin-bottom: 10px; /* Отступ снизу */
+}
+
+h4 img,
+h4 button {
+    margin-right: 20px; /* Отступ справа между изображением и текстом */
+}
+
+.like-button {
+    background-color: transparent; /* Убираем задний фон */
+    border: 1px solid #000000; /* Тонкая обводка */
+    padding: 2px 5px; /* Подобраны размеры отступов для кнопки */
+    font-size: 0.9em; /* Размер шрифта */
+    cursor: pointer; /* Изменяем курсор при наведении */
+}
+
+.like-button:hover {
+    border-color: #b8860b; /* Изменяем цвет обводки при наведении */
+}
+
 
 .city-image {
     width: calc(100%); /* Уменьшаем ширину изображения на 4px, чтобы учесть толщину рамки */
     border: 3px solid #b8860b; /* Добавляем золотую рамку толщиной 2px */
     clip-path: polygon(0 0, 100% 0, 100% 90%, 90% 100%, 0 100%); /* Обрезаем углы справа сверху и слева снизу */
 }
-
-
 
 .city-price {
     color: #333;
