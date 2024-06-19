@@ -50,7 +50,7 @@ body {
 }
 
 #scrollToTopBtn:before {
-    content: "↑"; /* Символ стрелки */
+    content: "\2191"; /* Символ стрелки */
 }
 
 #scrollToTopBtn:hover {
