@@ -31,7 +31,7 @@ body {
     padding: 10px;
 }
 
-/*скролл вверх*/
+/* скролл вверх */
 #scrollToTopBtn {
     position: fixed;
     bottom: 20px;
@@ -47,10 +47,15 @@ body {
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
     border: none; /* Убираем обводку */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* Центрирование текста */
 }
 
 #scrollToTopBtn:before {
-    content: "\2191"; /* Символ стрелки */
+    content: "↑"; /* Символ стрелки */
+    display: block; /* Убедимся, что это блочный элемент */
 }
 
 #scrollToTopBtn:hover {
@@ -68,7 +73,6 @@ body {
         width: 35px;
         height: 35px;
         font-size: 20px;
-        margin: 10px auto;
     }
 }
 
@@ -138,6 +142,7 @@ body {
     .sticky-buttons {
         right: 10px; /* Изменяем правое смещение */
         top: 75%; /* Перемещаем контакты ниже */
+        transition: right 0.3s ease; /* Добавляем переход для плавного движения */
     }
 
     .phone-btn,
@@ -150,6 +155,7 @@ body {
     .email-btn i {
         font-size: 18px; /* Уменьшаем размер иконок */
     }
+
     .pulse {
         width: 40px; /* Уменьшаем размер пульсации */
         height: 40px; /* Уменьшаем размер пульсации */
@@ -157,3 +163,4 @@ body {
         left: calc(50% - 20px); /* Корректируем положение пульсации */
     }
 }
+

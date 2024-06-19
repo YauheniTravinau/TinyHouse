@@ -180,6 +180,10 @@ p {
     border-radius: 10px; /* если нужно, добавьте скругление углов */
 }
 
+.container.expanded {
+    width: 100%;
+}
+
 h4 {
     display: flex;
     justify-content: center;
